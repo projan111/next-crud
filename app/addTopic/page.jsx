@@ -2,12 +2,15 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+// import { Toaster, toast } from "sonner";
 
 export default function addTopic() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
   const router = useRouter();
+
+  // const notify = toast.success("Topic added Successfully!");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,27 +40,31 @@ export default function addTopic() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-2">
-      <input
-        onChange={(e) => setTitle(e.target.value)}
-        value={title}
-        type="text"
-        className="border rounded-md p-2 focus:border-green-400 "
-        placeholder="Topic Title"
-      />
-      <input
-        onChange={(e) => setDescription(e.target.value)}
-        value={description}
-        type="text"
-        className="border rounded-md p-2 focus:border-green-400 "
-        placeholder="Topic Description"
-      />
-      <button
-        type="submit"
-        className="bg-green-200 py-2 px-4 w-fit font-semibold text-zinc-600 hover:text-zinc-800 hover:bg-green-400 rounded-lg "
-      >
-        Add Topic
-      </button>
-    </form>
+    <>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+        <input
+          onChange={(e) => setTitle(e.target.value)}
+          value={title}
+          type="text"
+          className="border rounded-md p-2 focus:border-green-400 "
+          placeholder="Topic Title"
+        />
+        <input
+          onChange={(e) => setDescription(e.target.value)}
+          value={description}
+          type="text"
+          className="border rounded-md p-2 focus:border-green-400 "
+          placeholder="Topic Description"
+        />
+        {/* <Toaster richColors /> */}
+        <button
+          // onClick={notify}
+          type="submit"
+          className="bg-green-200 py-2 px-4 w-fit font-semibold text-zinc-600 hover:text-zinc-800 hover:bg-green-400 rounded-lg "
+        >
+          Add Topic
+        </button>
+      </form>
+    </>
   );
 }

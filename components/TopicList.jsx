@@ -40,7 +40,7 @@ const TopicList = async () => {
                 icon="akar-icons:edit"
                 width="24"
                 height="24"
-                className="text-zinc-500 hover:text-zinc-700"
+                className="text-zinc-500 hover:text-green-700"
               />
             </Link>
           </div>
